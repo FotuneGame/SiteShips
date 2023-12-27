@@ -1,0 +1,36 @@
+.min{
+    position: center;
+    min-height: 35rem;
+    z-index: -1;
+}
+.img{
+    top:-10rem;
+}
+
+.text{
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+}
+.whiteline{
+    z-index: -1;
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin-top: -50px;
+    height: 20vh;
+    overflow: hidden;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 1400px){
+    .img{
+        top:-7rem;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .img{
+        top:0rem;
+    }
+}
