@@ -5,7 +5,7 @@ import {FaShip,FaMap,FaLaugh,FaLocationArrow} from "react-icons/fa";
 
 const Main = () => {
     return (
-        <div className="content">
+        <div className="content pt-5">
 
             <div className="position-absolute w-100 h-50 z-3 py-md-5">
                 <div className="mx-5  w-75 py-5">

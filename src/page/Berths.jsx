@@ -2,7 +2,7 @@ import React from 'react';
 
 const Berths = () => {
     return (
-        <div className="content">
+        <div className="content pt-5">
             <h1>Наши причалы</h1>
         </div>
     );
