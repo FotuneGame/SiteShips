@@ -5,3 +5,12 @@
 .content {
     min-height: calc(100vh - 80px);
 }
+
+@media only screen and (max-width: 371px){
+    h1{
+        font-size: 14px;
+    }
+    p{
+        font-size: 12px;
+    }
+}

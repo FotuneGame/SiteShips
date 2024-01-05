@@ -1,9 +1,10 @@
 import React from 'react';
 import {FaPhoneAlt,FaEnvelope} from "react-icons/fa";
+import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
 
 const About = () => {
     return (
-        <div className="content pt-5">
+        <div className="content mt-2 pt-5">
             <div className="container shadow d-grid align-content-center  p-3">
                 <div className="row">
                     <div className="col-12 py-3 col-lg-6 py-lg-0 align-self-center">
@@ -30,6 +31,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ"/>
         </div>
     );
 };
