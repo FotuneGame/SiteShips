@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <div className="content pt-5">
 
-            <div className="position-absolute w-100 h-50 z-3 py-md-5">
+            <div className="position-absolute w-100 h-50 z-1 py-md-5">
                 <div className="mx-5  w-75 py-5">
                     <h1 className="text-white">Аренда катеров и яхт<br/>в Санкт-Петербурге</h1>
                 </div>
@@ -41,7 +41,7 @@ const Main = () => {
                 </div>
             </div>
 
-            <MainImg img="./img/page/main.jpg"/>
+            <MainImg img="./img/page/main.jpg" main={true}/>
         </div>
     );
 };

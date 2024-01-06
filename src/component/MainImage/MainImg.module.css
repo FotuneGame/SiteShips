@@ -1,8 +1,15 @@
-.min{
+.min_35{
     position: center;
     min-height: 35rem;
     z-index: -1;
 }
+
+.min_25{
+    position: center;
+    min-height: 25rem;
+    z-index: -1;
+}
+
 .img{
     min-width: 45rem;
     top:-10rem;

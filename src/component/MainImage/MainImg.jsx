@@ -4,11 +4,21 @@ import style from './MainImg.module.css';
 const MainImg = (props) => {
     return (
         <div className="p-0 mx-0 w-100">
-            <div className={["overflow-hidden",style.min].join(" ")}>
-                <figure className={["position-relative bg-black m-0 ",style.min].join(" ")}>
-                    <img src={props?.img} alt={props?.title} className={["img-fluid position-absolute w-100 opacity-75",style.min,style.img].join(" ")}/>
-                </figure>
-            </div>
+                    {props.main ?
+                        <div className={["overflow-hidden",style.min_35].join(" ")}>
+                            <figure className={["position-relative bg-black m-0 ",style.min_35].join(" ")}>
+                                <img src={props?.img} alt={props?.title} className={["img-fluid position-absolute w-100 opacity-75",style.min_35,style.img].join(" ")}/>
+                            </figure>
+                        </div>
+                        :
+                        <div className={["overflow-hidden",style.min_25].join(" ")}>
+                            <figure className={["position-relative bg-black m-0 ",style.min_25].join(" ")}>
+                                <img src={props?.img} alt={props?.title} className={["img-fluid position-absolute w-100 opacity-75",style.min_25,style.img].join(" ")}/>
+                            </figure>
+                        </div>
+                    }
+
+
 
             <svg className={style.whiteline} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" color="white" width="1295" height="627" viewBox="0 0 1295 627" fill="none">
                 <g clipPath="url(#clip0_2168_1347)">

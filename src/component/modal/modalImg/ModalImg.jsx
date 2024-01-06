@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './Modal.module.css';
+import style from './ModalImg.module.css';
 
-const Modal = ({children,visible,setVisible}) => {
+const ModalImg = ({children,visible,setVisible}) => {
 
     const modalClass = [];
     if(visible)modalClass.push(style.active);
@@ -13,4 +13,4 @@ const Modal = ({children,visible,setVisible}) => {
     );
 };
 
-export default Modal;
+export default ModalImg;

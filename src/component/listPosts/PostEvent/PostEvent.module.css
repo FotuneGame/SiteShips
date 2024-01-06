@@ -1,0 +1,18 @@
+.img_a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.img{
+    min-height: 15vh;
+}
+
+.name{
+    width: 100%;
+    left: 0;
+    bottom: 5%;
+    z-index: 1;
+}

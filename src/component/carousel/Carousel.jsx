@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Carousel as CarouselB} from "react-bootstrap"
-import ModuleImg from '../modal/Modal';
+import ModuleImg from '../modal/modalImg/ModalImg';
 import Wrapper from "./wrapper/Wrapper";
 
 const Carousel = ({imgs}) => {

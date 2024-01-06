@@ -13,7 +13,10 @@ import Events from "./page/Events";
 import Buffet from "./page/Buffet";
 import Footer from "./component/footer/Footer";
 
-
+import Boat from "./page/Boat";
+import Yacht from "./page/Yacht";
+import Event from "./page/Event";
+import RouterSee from "./page/RouterSee";
 
 function App() {
   return (
@@ -24,8 +27,12 @@ function App() {
                 <Route path="/" element={<Main/>}/>
                 <Route path="/berths" element={<Berths/>}/>
                 <Route path="/boats" element={<Boats/>}/>
+                <Route path="/boats/:id" element={<Boat/>}/>
                 <Route path="/yachts" element={<Yachts/>}/>
+                <Route path="/yachts/:id" element={<Yacht/>}/>
                 <Route path="/routers" element={<Routers/>}/>
+                <Route path="/routers/:id" element={<RouterSee/>}/>
+                <Route path="/events/:id" element={<Event/>}/>
                 <Route path="/events" element={<Events/>}/>
                 <Route path="/buffet" element={<Buffet/>}/>
                 <Route path="/about" element={<About/>}/>

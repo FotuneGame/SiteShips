@@ -1,0 +1,23 @@
+.type{
+    right: 0;
+    top: 0;
+}
+
+.img_a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.img{
+    min-height: 30vh;
+}
+
+.name{
+    width: 100%;
+    left: 0;
+    bottom: 5%;
+    z-index: 1;
+}

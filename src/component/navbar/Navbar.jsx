@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <NavbarB collapseOnSelect expand='lg' className="bg-white shadow fixed-top">
+        <NavbarB collapseOnSelect expand='lg' className="bg-white shadow fixed-top z-2">
             <Container className="mx-auto px-0">
                 <NavbarB.Brand >
                     <NavLink className="text-decoration-none text-black" to={"/"}>Имя Сайта</NavLink>

@@ -3,9 +3,15 @@ import {FaPhoneAlt,FaEnvelope} from "react-icons/fa";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
 
 const About = () => {
+
+    const sendProposal = (message) =>{
+        //{name:"",phone:"",date:"",time:"",text:""}
+        console.log(message);
+    }
+
     return (
         <div className="content mt-2 pt-5">
-            <div className="container shadow d-grid align-content-center  p-3">
+            <div className="container shadow d-grid align-content-center  p-lg-3">
                 <div className="row">
                     <div className="col-12 py-3 col-lg-6 py-lg-0 align-self-center">
                         <img src="./img/page/main.jpg" className="img-fluid rounded"/>
@@ -31,7 +37,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ"/>
+            <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ" callback={sendProposal}/>
         </div>
     );
 };
