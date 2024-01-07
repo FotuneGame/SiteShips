@@ -1,0 +1,12 @@
+.name_ship{
+    color: black;
+}
+
+.name_ship:hover{
+    color: #007bff;
+}
+
+.type_ship{
+    padding-left: 12px;
+    font-size: 12px;
+}

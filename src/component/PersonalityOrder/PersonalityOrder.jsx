@@ -21,7 +21,7 @@ const PersonalityOrder = (props) => {
     }
 
     return (
-        <div className="container shadow  align-content-center  p-0 p-md-3 mt-3">
+        <div className="container shadow  align-content-center  p-0 p-md-3 my-3">
             <div className="row mx-1 mb-2"><h1 className="text-center text-md-start">{props?.title}</h1></div>
             <div className="row">
                 <form method="POST" className="d-grid ">
