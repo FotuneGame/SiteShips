@@ -10,7 +10,7 @@ const About = () => {
     }
 
     return (
-        <div className="content mt-2 pt-5">
+        <div className="content mt-3 pt-5">
             <div className="container shadow d-grid align-content-center  p-lg-3">
                 <div className="row">
                     <div className="col-12 py-3 col-lg-6 py-lg-0 align-self-center">

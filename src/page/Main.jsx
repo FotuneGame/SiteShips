@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MainImg from "../component/MainImage/MainImg";
 
 import {FaShip,FaMap,FaLaugh,FaLocationArrow} from "react-icons/fa";
+import CarouselCard from "../component/carousel/CarouselCard";
+import PopularList from "../component/Popular/PopularList";
 
 const Main = () => {
+
+    const [popularList,setPopularList] = useState({
+        boats:[{id:"1",name:"имя",typeShip:"Катер",imgPath:"./img/page/boats.jpg"},{id:"2",name:"имя",typeShip:"Катер",imgPath:"./img/page/boats.jpg"}],
+        yachts:[{id:"1",name:"имя",typeShip:"Яхта",imgPath:"./img/page/yachts.jpg"},{id:"2",name:"имя",typeShip:"Яхта",imgPath:"./img/page/yachts.jpg"}],
+        routers:[ {id:"1",name:"имя",typeShip:"Катер",imgPath:"./img/page/routers.jpg"}, {id:"2",name:"имя",typeShip:"Яхта",imgPath:"./img/page/routers.jpg"}],
+        eventsSee:[{id:"1",name:"имя",imgPath:"./img/page/events.jpg"},{id:"2",name:"имя",imgPath:"./img/page/events.jpg"}],
+        urlClassMoreInfo:{boats:"/boats",yachts:"/yachts",routers:"/routers",eventsSee:"/events"}
+    });
+    const [sizeCarouselCard,setSizeCarouselCard] = useState(popularList?.boats?.length + popularList?.yachts?.length + popularList?.routers?.length + popularList?.eventsSee?.length)
+
     return (
         <div className="content pt-5">
 
@@ -42,6 +54,10 @@ const Main = () => {
             </div>
 
             <MainImg img="./img/page/main.jpg" main={true}/>
+
+            <CarouselCard title="Популярное" size={sizeCarouselCard}>
+                <PopularList popularList={popularList}/>
+            </CarouselCard>
         </div>
     );
 };

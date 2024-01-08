@@ -8,8 +8,8 @@ const PostBerth = (props) => {
                 <div className="pt-1">
                     <h2 className="text-start m-0">{props?.name}</h2>
                     <div className="shadow rounded mt-1 p-2">
-                        {props?.urlClassMoreInfo.constructor === Array ?
-                            props?.ship.map((obj,index) => {
+                        {props?.urlClassMoreInfo && props.urlClassMoreInfo.constructor === Array ?
+                            props.ship.map((obj,index) => {
                                 return(
                                     <div className="p-1 m-0 mt-1" key={obj?.name + "_" + props?.id + "_" + "_" + obj?.id}>
                                         {obj.typeShip==="Яхта"
