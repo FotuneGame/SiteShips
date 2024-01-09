@@ -4,7 +4,7 @@ import style from "../PostEvent/PostEvent.module.css";
 import {FaArrowCircleRight} from "react-icons/fa";
 const PostEvent = (props) => {
     return (
-        <div className="rounded-3 col p-3">
+        <div className="col-12 col-md-6 col-lg-4 rounded-3 p-3">
             <div className="position-relative m-0 p-0 overflow-hidden">
                 <div className="p-0">
                     <NavLink className={style.img_a} to={props?.urlClassMoreInfo+"/"+ props?.id}></NavLink>

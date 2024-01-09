@@ -1,29 +1,29 @@
 import React from 'react';
 import PopularCard from "./PopularCard";
 
-const PopularList = (props) => {
+const PopularList = ({popularList,title}) => {
     return (
         <div>
-            {props?.popularList && props.popularList?.urlClassMoreInfo ?
+            {popularList && popularList?.urlClassMoreInfo ?
                 <div className="d-flex">
-                {props.popularList?.boats ?
-                    props.popularList.boats.map((obj,index)=>{
-                        return (<PopularCard key={props?.title + "_boats_" + obj?.name + index} {...obj} urlClassMoreInfo={props.popularList.urlClassMoreInfo?.boats} type="Катер"/>);
+                {popularList?.boats ?
+                    popularList.boats.map((obj,index)=>{
+                        return (<PopularCard key={title + "_boats_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.boats} type="Катер"/>);
                     })
                     :null}
-                {props.popularList?.yachts ?
-                    props.popularList.yachts.map((obj,index)=>{
-                        return (<PopularCard key={props?.title + "_yachts_" + obj?.name + index} {...obj} urlClassMoreInfo={props.popularList.urlClassMoreInfo?.yachts} type="Яхта"/>);
+                {popularList?.yachts ?
+                    popularList.yachts.map((obj,index)=>{
+                        return (<PopularCard key={title + "_yachts_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.yachts} type="Яхта"/>);
                     })
                     :null}
-                {props.popularList?.routers ?
-                    props.popularList.routers.map((obj,index)=>{
-                        return (<PopularCard key={props?.title + "_routers_" + obj?.name + index} {...obj} urlClassMoreInfo={props.popularList.urlClassMoreInfo?.routers} type="Маршрут"/>);
+                {popularList?.routers ?
+                    popularList.routers.map((obj,index)=>{
+                        return (<PopularCard key={title + "_routers_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.routers} type="Маршрут"/>);
                     })
                     :null}
-                {props.popularList?.eventsSee ?
-                    props.popularList.eventsSee.map((obj,index)=>{
-                        return (<PopularCard key={props?.title + "_eventsSee_" + obj?.name + index} {...obj} urlClassMoreInfo={props.popularList.urlClassMoreInfo?.eventsSee} type="Мероприятие"/>);
+                {popularList?.eventsSee ?
+                    popularList.eventsSee.map((obj,index)=>{
+                        return (<PopularCard key={title + "_eventsSee_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.eventsSee} type="Мероприятие"/>);
                     })
                     :null}
                 </div>

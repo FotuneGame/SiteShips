@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FaArrowCircleRight, FaEnvelope, FaPhoneAlt, FaTelegram, FaWhatsapp} from 'react-icons/fa';
 
-const PersonalityOrder = (props) => {
+const PersonalityOrder = ({title,withoutContacts,callback}) => {
 
     const [message,setMessage] = useState({name:"",phone:"",date:"",time:"",text:""});
 
@@ -15,14 +15,14 @@ const PersonalityOrder = (props) => {
             alert("Не заполненое поле");
             return;
         }
-        props?.callback(message);
+        callback(message);
         setMessage({name:"",phone:"",date:"",time:"",text:""});
         alert("Сообщение отправлено");
     }
 
     return (
         <div className="container shadow  align-content-center  p-0 p-md-3 my-3">
-            <div className="row mx-1 mb-2"><h1 className="text-center text-md-start">{props?.title}</h1></div>
+            <div className="row mx-1 mb-2"><h1 className="text-center text-md-start">{title}</h1></div>
             <div className="row">
                 <form method="POST" className="d-grid ">
                     <div className="row">
@@ -33,7 +33,7 @@ const PersonalityOrder = (props) => {
                                     <input className="form-control mt-2 me-2" value={message.date} type="date" placeholder="дд.мм.гггг" onChange={(e)=>setMessage({...message,date:e.target.value})}/>
                                     <input className="form-control mt-2" value={message.time} type="time" placeholder="чч.мм" onChange={(e)=>setMessage({...message,time:e.target.value})}/>
                                 </div>
-                                {props.withoutContacts ?
+                                {withoutContacts ?
                                     null
                                     :
                                     <div className="mx-auto my-2 d-grid d-md-flex">

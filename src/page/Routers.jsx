@@ -22,7 +22,7 @@ const Routers = () => {
                 </div>
             </div>
             <MainImg img="./img/page/routers.jpg"/>
-            <ListPosts urlClassMoreInfo="/routers" postType={PostRoute} posts={routersPost} title="МАРШРУТЫ" text="Здесь вы найдете разнообразные варианты прогулок на яхте или катере по Санкт-Петербургу и его окрестностям." />
+            <ListPosts isAdaptive={true} urlClassMoreInfo="/routers" PostType={PostRoute} posts={routersPost} title="МАРШРУТЫ" text="Здесь вы найдете разнообразные варианты прогулок на яхте или катере по Санкт-Петербургу и его окрестностям." />
         </div>
     );
 };

@@ -23,7 +23,7 @@ const PostRoute = (props) => {
     }
 
     return (
-        <div className="rounded-3 col p-3">
+        <div className="col-12 col-md-6 col-lg-4 rounded-3 p-3">
             <div className="position-relative m-0 p-0 overflow-hidden">
                 <div className="position-absolute z-0 m-2">
                     <div className="rounded-5 bg-white px-2 me-2"><strong>{props?.time}</strong> {hourInRussia}</div>

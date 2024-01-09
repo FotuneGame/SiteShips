@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const PostBerth = (props) => {
     return (
-        <div className="rounded-3 col p-3">
+        <div className="col-12 col-md-6 col-lg-4 rounded-3 p-3">
                 <div className="pt-1">
                     <h2 className="text-start m-0">{props?.name}</h2>
                     <div className="shadow rounded mt-1 p-2">

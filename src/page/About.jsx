@@ -1,8 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {FaPhoneAlt,FaEnvelope} from "react-icons/fa";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
+import ListPosts from "../component/listPosts/ListPosts";
+import CarouselCard from  "../component/carousel/CarouselCard";
+import PostRoute from "../component/listPosts/PostRouter/PostRoute";
+import Hr from "../component/hr/Hr";
 
 const About = () => {
+
+    const [routersPostFirst,setRoutersPostFirst] = useState([
+        {id:"1",name:"имя",typeShip:"Катер",time:"1",imgPath:"./img/page/routers.jpg"},
+        {id:"2",name:"имя",typeShip:"Яхта",time:"2",imgPath:"./img/page/routers.jpg"},
+        {id:"3",name:"имя",typeShip:"Катер",time:"3",imgPath:"./img/page/routers.jpg"}
+    ]);
+
+    const [sizeCarouselCard,setSizeCarouselCard] = useState(routersPostFirst.length);
+
 
     const sendProposal = (message) =>{
         //{name:"",phone:"",date:"",time:"",text:""}
@@ -37,7 +50,14 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ" callback={sendProposal}/>
+
+            <div className="container my-5">
+                <Hr/>
+                <CarouselCard title="Маршруты" size={sizeCarouselCard} urlMore={"/events"}>
+                    <ListPosts urlClassMoreInfo="/events" PostType={PostRoute} posts={routersPostFirst} isAdaptive={false}/>
+                </CarouselCard>
+                <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ" callback={sendProposal}/>
+            </div>
         </div>
     );
 };

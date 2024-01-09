@@ -22,7 +22,7 @@ const Events = () => {
                 </div>
             </div>
             <MainImg img="./img/page/events.jpg"/>
-            <ListPosts urlClassMoreInfo="/events" postType={PostEvent} posts={eventsPost} title="ПРАЗДНИК НА ЯХТЕ ИЛИ КАТЕРЕ" text="Организация незабываемых мероприятий на борту яхт и катеров в Санкт-Петербурге под ключ." />
+            <ListPosts  isAdaptive={true} urlClassMoreInfo="/events" PostType={PostEvent} posts={eventsPost} title="ПРАЗДНИК НА ЯХТЕ ИЛИ КАТЕРЕ" text="Организация незабываемых мероприятий на борту яхт и катеров в Санкт-Петербурге под ключ." />
         </div>
     );
 };

@@ -21,7 +21,7 @@ const Boats = () => {
                 </div>
             </div>
             <MainImg img="./img/page/boats.jpg"/>
-            <ListPosts urlClassMoreInfo="/boats" postType={PostShip} posts={boatsPost} title="АРЕНДА КАТЕРА" text="Большой выбор прогулочных катеров для аренды по выгодным ценам. Лучшие маршруты по СПб. Организация мероприятий под ключ с фуршетом. Опытные капитаны."/>
+            <ListPosts isAdaptive={true} urlClassMoreInfo="/boats" PostType={PostShip} posts={boatsPost} title="АРЕНДА КАТЕРА" text="Большой выбор прогулочных катеров для аренды по выгодным ценам. Лучшие маршруты по СПб. Организация мероприятий под ключ с фуршетом. Опытные капитаны."/>
 
         </div>
     );

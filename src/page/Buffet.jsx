@@ -1,8 +1,34 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Carousel from "../component/carousel/Carousel";
 import {FaFilePdf} from "react-icons/fa";
+import CarouselCard from "../component/carousel/CarouselCard";
+import ListPosts from "../component/listPosts/ListPosts";
+import PostShip from "../component/listPosts/PostShip/PostShip";
+import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
+import Hr from "../component/hr/Hr";
 
 const Buffet = () => {
+
+    const [boatsPostFirst,setBoatsPostFirst] = useState([
+        {id:"1",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:01",countPerson:"1",oldPrice:"1000",price:"500",isHit:"true",imgPath:"./img/page/boats.jpg"},
+        {id:"2",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:15",countPerson:"2",oldPrice:"",price:"2000",isHit:"false",imgPath:"./img/page/boats.jpg"},
+        {id:"3",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:22",countPerson:"3",oldPrice:"",price:"3000",isHit:"true",imgPath:"./img/page/boats.jpg"},
+        {id:"4",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"20:15",countPerson:"4",oldPrice:"23",price:"4000",isHit:"false",imgPath:"./img/page/boats.jpg"},
+    ]);
+
+    const [yachtsPostFirst,setYachtsPostFirst] = useState([
+        {id:"1",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:01",countPerson:"1",oldPrice:"1000",price:"500",isHit:"true",imgPath:"./img/page/yachts.jpg"},
+        {id:"2",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:15",countPerson:"2",oldPrice:"",price:"2000",isHit:"false",imgPath:"./img/page/yachts.jpg"},
+        {id:"3",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:22",countPerson:"3",oldPrice:"",price:"3000",isHit:"true",imgPath:"./img/page/yachts.jpg"},
+        {id:"4",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"20:15",countPerson:"4",oldPrice:"23",price:"4000",isHit:"false",imgPath:"./img/page/yachts.jpg"},
+        {id:"5",name:"имя",pier:"имя причала",onBoard:"на борту, на борту, на борту.",minTime:"00:01",countPerson:"1",oldPrice:"1000",price:"500",isHit:"true",imgPath:"./img/page/yachts.jpg"},
+    ]);
+
+    const sendProposal = (message) =>{
+        //{name:"",phone:"",date:"",time:"",text:""}
+        console.log(message);
+    }
+
     return (
         <div className="content mt-3 pt-5">
             <div className="container shadow d-grid align-content-center  p-lg-3">
@@ -29,6 +55,18 @@ const Buffet = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="container my-5">
+                <Hr/>
+                <CarouselCard title="Катера" size={boatsPostFirst.length} urlMore={"/boats"}>
+                    <ListPosts  isAdaptive={false} urlClassMoreInfo="/boats" PostType={PostShip} posts={boatsPostFirst}/>
+                </CarouselCard>
+                <Hr/>
+                <CarouselCard title="Яхты" size={yachtsPostFirst.length} urlMore={"/yachts"}>
+                    <ListPosts  isAdaptive={false} urlClassMoreInfo="/yachts" PostType={PostShip} posts={yachtsPostFirst}/>
+                </CarouselCard>
+                <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
             </div>
         </div>
     );

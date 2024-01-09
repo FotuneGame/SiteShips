@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {FaAngleLeft,FaAngleRight} from "react-icons/fa";
+import {FaAngleLeft, FaAngleRight, FaArrowCircleRight} from "react-icons/fa";
+import {NavLink} from "react-router-dom";
 
-const CarouselCard = ({title, size, children}) => {
+const CarouselCard = ({title, size,urlMore, children}) => {
 
     const getWindowSize = () => {
         const {innerWidth, innerHeight} = window;
@@ -29,8 +30,9 @@ const CarouselCard = ({title, size, children}) => {
     });
 
     useEffect(()=>{
-        // корректируем шаг в зависимости от col-12 col-md-6
-        if(windowSize.innerWidth > 768) setStepPercent(50);
+        // корректируем шаг в зависимости от col-12 col-md-6 col-lg-3
+        if(windowSize.innerWidth > 992) setStepPercent(33.33);
+        else if(windowSize.innerWidth > 768) setStepPercent(50);
         else setStepPercent(100);
         setLimitPercent((stepPercent) * (size-1));
         if(leftValue<=-limitPercent) setLeftValue(-limitPercent);
@@ -53,7 +55,7 @@ const CarouselCard = ({title, size, children}) => {
 
 
     return (
-        <div className="container shadow pt-3 my-3">
+        <div className="container pt-3 my-3">
             <div className="p-3">
                 <h1 className="text-center mx-auto">{title}</h1>
             </div>
@@ -64,6 +66,14 @@ const CarouselCard = ({title, size, children}) => {
                     <button className="position-absolute top-50 start-0 rounded-circle border-0 bg-white shadow p-2 z-1" onClick={MoveLeft}><FaAngleLeft size="1.5rem"/></button>
                     <button className="position-absolute top-50 end-0 rounded-circle border-0 bg-white shadow p-2 z-1"  onClick={MoveRight}><FaAngleRight size="1.5rem"/></button>
             </div>
+            {urlMore ?
+                <div className="d-flex justify-content-center">
+                     <NavLink className="btn btn-success border-3 text-start m-2 p-2" to={urlMore}>
+                         Смотреть ещё
+                         <FaArrowCircleRight className="float-end ms-4" size="1.5rem" color="white"/>
+                     </NavLink>
+                </div>
+            :null}
         </div>
     );
 };
