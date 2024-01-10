@@ -1,9 +1,10 @@
-import React,{useState}  from 'react';
+import React,{useState,useContext}  from 'react';
 import {NavLink, useParams} from "react-router-dom";
 import Carousel from "../component/carousel/Carousel";
 import {FaFire} from "react-icons/fa";
 import style from "../component/listPosts/PostRouter/PostRoute.module.css";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Event = () => {
     const params = useParams();
@@ -45,7 +46,7 @@ const Event = () => {
                                     <NavLink className="mx-0  text-decoration-none text-black" to={"/"}>Главная</NavLink>
                                 </li>
                                 <li className="breadcrumb-item">
-                                    <NavLink className="mx-0 text-decoration-none text-black" to={"/events"}>Мероприятия</NavLink>
+                                    <NavLink className="mx-0 text-decoration-none text-black" to={useContext(UrlClassMoreInfoContext).eventsSee}>Мероприятия</NavLink>
                                 </li>
                                 <li className="breadcrumb-item active">
                                     <NavLink className="mx-0 text-decoration-none text-black" to={"#"}>{eventSee.name}</NavLink>

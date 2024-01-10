@@ -10,3 +10,11 @@
     padding-left: 12px;
     font-size: 12px;
 }
+
+.name_berth{
+    color: black;
+}
+
+.name_berth:hover{
+    color: #007bff;
+}

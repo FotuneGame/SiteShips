@@ -1,7 +1,8 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import MainImg from "../component/MainImage/MainImg";
 import ListPosts from "../component/listPosts/ListPosts";
 import PostEvent from "../component/listPosts/PostEvent/PostEvent";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Events = () => {
 
@@ -22,7 +23,7 @@ const Events = () => {
                 </div>
             </div>
             <MainImg img="./img/page/events.jpg"/>
-            <ListPosts  isAdaptive={true} urlClassMoreInfo="/events" PostType={PostEvent} posts={eventsPost} title="ПРАЗДНИК НА ЯХТЕ ИЛИ КАТЕРЕ" text="Организация незабываемых мероприятий на борту яхт и катеров в Санкт-Петербурге под ключ." />
+            <ListPosts  isAdaptive={true} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).eventsSee} PostType={PostEvent} posts={eventsPost} title="ПРАЗДНИК НА ЯХТЕ ИЛИ КАТЕРЕ" text="Организация незабываемых мероприятий на борту яхт и катеров в Санкт-Петербурге под ключ." />
         </div>
     );
 };

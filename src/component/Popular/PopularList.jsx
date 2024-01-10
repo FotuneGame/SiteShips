@@ -1,29 +1,31 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PopularCard from "./PopularCard";
+import {UrlClassMoreInfoContext} from "../../context";
 
 const PopularList = ({popularList,title}) => {
+    const url = useContext(UrlClassMoreInfoContext);
     return (
         <div>
-            {popularList && popularList?.urlClassMoreInfo ?
+            {popularList ?
                 <div className="d-flex">
                 {popularList?.boats ?
                     popularList.boats.map((obj,index)=>{
-                        return (<PopularCard key={title + "_boats_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.boats} type="Катер"/>);
+                        return (<PopularCard key={title + "_boats_" + obj?.name + index} {...obj} urlClassMoreInfo={url.boats} type="Катер"/>);
                     })
                     :null}
                 {popularList?.yachts ?
                     popularList.yachts.map((obj,index)=>{
-                        return (<PopularCard key={title + "_yachts_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.yachts} type="Яхта"/>);
+                        return (<PopularCard key={title + "_yachts_" + obj?.name + index} {...obj} urlClassMoreInfo={url.yachts} type="Яхта"/>);
                     })
                     :null}
                 {popularList?.routers ?
                     popularList.routers.map((obj,index)=>{
-                        return (<PopularCard key={title + "_routers_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.routers} type="Маршрут"/>);
+                        return (<PopularCard key={title + "_routers_" + obj?.name + index} {...obj} urlClassMoreInfo={url.routers} type="Маршрут"/>);
                     })
                     :null}
                 {popularList?.eventsSee ?
                     popularList.eventsSee.map((obj,index)=>{
-                        return (<PopularCard key={title + "_eventsSee_" + obj?.name + index} {...obj} urlClassMoreInfo={popularList.urlClassMoreInfo?.eventsSee} type="Мероприятие"/>);
+                        return (<PopularCard key={title + "_eventsSee_" + obj?.name + index} {...obj} urlClassMoreInfo={url.eventsSee} type="Мероприятие"/>);
                     })
                     :null}
                 </div>

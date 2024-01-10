@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import MainImg from "../component/MainImage/MainImg";
 import ListPosts from "../component/listPosts/ListPosts";
 import PostRoute from "../component/listPosts/PostRouter/PostRoute";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Routers = () => {
 
@@ -22,7 +23,7 @@ const Routers = () => {
                 </div>
             </div>
             <MainImg img="./img/page/routers.jpg"/>
-            <ListPosts isAdaptive={true} urlClassMoreInfo="/routers" PostType={PostRoute} posts={routersPost} title="МАРШРУТЫ" text="Здесь вы найдете разнообразные варианты прогулок на яхте или катере по Санкт-Петербургу и его окрестностям." />
+            <ListPosts isAdaptive={true} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).routers} PostType={PostRoute} posts={routersPost} title="МАРШРУТЫ" text="Здесь вы найдете разнообразные варианты прогулок на яхте или катере по Санкт-Петербургу и его окрестностям." />
         </div>
     );
 };

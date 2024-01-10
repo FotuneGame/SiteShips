@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import {FaPhoneAlt,FaEnvelope} from "react-icons/fa";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
 import ListPosts from "../component/listPosts/ListPosts";
 import CarouselCard from  "../component/carousel/CarouselCard";
 import PostRoute from "../component/listPosts/PostRouter/PostRoute";
 import Hr from "../component/hr/Hr";
+import {UrlClassMoreInfoContext} from "../context";
 
 const About = () => {
 
@@ -53,8 +54,8 @@ const About = () => {
 
             <div className="container my-5">
                 <Hr/>
-                <CarouselCard title="Маршруты" size={sizeCarouselCard} urlMore={"/events"}>
-                    <ListPosts urlClassMoreInfo="/events" PostType={PostRoute} posts={routersPostFirst} isAdaptive={false}/>
+                <CarouselCard title="Маршруты" size={sizeCarouselCard} urlMore={useContext(UrlClassMoreInfoContext).routers}>
+                    <ListPosts urlClassMoreInfo={useContext(UrlClassMoreInfoContext).routers} PostType={PostRoute} posts={routersPostFirst} isAdaptive={false}/>
                 </CarouselCard>
                 <PersonalityOrder title="ПОЛУЧИТЬ ПЕРСОНАЛЬНОЕ ПРЕДЛОЖЕНИЕ" callback={sendProposal}/>
             </div>

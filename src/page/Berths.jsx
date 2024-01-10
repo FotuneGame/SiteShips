@@ -1,7 +1,8 @@
-import React,{useState} from 'react';
+import React, {useContext, useState} from 'react';
 import ListPosts from "../component/listPosts/ListPosts";
 import PostBerth from "../component/listPosts/PostBerth/PostBerth";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
+import {UrlClassMoreInfoContext} from "../context";
 const Berths = () => {
 
     const sendProposal = (message) =>{
@@ -34,7 +35,7 @@ const Berths = () => {
             <iframe
                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A3eed6f6eb7f99e0ba0fea2c7deda8d11030fcdf8256ac87b829192365d10c30d&amp;source=constructor"
                 width="100%" height="400" frameBorder="0"></iframe>
-            <ListPosts isAdaptive={true} urlClassMoreInfo={["/boats","/yachts"]} PostType={PostBerth} posts={berthsPost} title="НАШИ ПРИЧАЛЫ"/>
+            <ListPosts isAdaptive={true} urlClassMoreInfo={{berths:useContext(UrlClassMoreInfoContext).berths,boats:useContext(UrlClassMoreInfoContext).boats,yachts:useContext(UrlClassMoreInfoContext).yachts}} PostType={PostBerth} posts={berthsPost} title="НАШИ ПРИЧАЛЫ"/>
             <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
         </div>
     );

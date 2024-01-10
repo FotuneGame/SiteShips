@@ -21,3 +21,11 @@
     position: absolute;
     z-index: 1;
 }
+
+.name_berth{
+    color: black;
+}
+
+.name_berth:hover{
+    color: #007bff;
+}

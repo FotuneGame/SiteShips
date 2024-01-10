@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import MainImg from "../component/MainImage/MainImg";
 import ListPosts from "../component/listPosts/ListPosts";
 import PostShip from "../component/listPosts/PostShip/PostShip";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Yachts = () => {
 
@@ -25,7 +26,7 @@ const Yachts = () => {
                 </div>
             </div>
             <MainImg img="./img/page/yachts.jpg"/>
-            <ListPosts isAdaptive={true} urlClassMoreInfo="/yachts" PostType={PostShip} posts={yachtsPost} title="АРЕНДА ЯХТЫ" text="Большой выбор моторных яхт с капитаном, для водных прогулок по Санкт-Петербургу."/>
+            <ListPosts isAdaptive={true} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).yachts} PostType={PostShip} posts={yachtsPost} title="АРЕНДА ЯХТЫ" text="Большой выбор моторных яхт с капитаном, для водных прогулок по Санкт-Петербургу."/>
         </div>
     );
 };

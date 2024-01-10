@@ -1,12 +1,14 @@
-import React,{useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {NavLink, useParams} from "react-router-dom";
 import Carousel from "../component/carousel/Carousel";
 import style from "../component/listPosts/PostShip/PostShip.module.css";
 import {FaArrowCircleRight, FaFire, FaTimes} from "react-icons/fa";
 import Modal from "../component/modal/default/Modal";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Boat = () => {
+
     const params = useParams();
     console.log(params.id);
 
@@ -14,7 +16,10 @@ const Boat = () => {
         {
             id:"1",
             name:"имя",
-            pier:"имя причала",
+            pier:{
+                id:"1",
+                name:"имя причала",
+            },
             onBoard:"на борту, на борту, на борту.",
             minTime:"00:01",
             countPerson:"1",
@@ -53,7 +58,7 @@ const Boat = () => {
                                     <NavLink className="mx-0  text-decoration-none text-black" to={"/"}>Главная</NavLink>
                                 </li>
                                 <li className="breadcrumb-item">
-                                    <NavLink className="mx-0 text-decoration-none text-black" to={"/boats"}>Катера</NavLink>
+                                    <NavLink className="mx-0 text-decoration-none text-black" to={useContext(UrlClassMoreInfoContext).boats} >Катера</NavLink>
                                 </li>
                                 <li className="breadcrumb-item active">
                                     <NavLink className="mx-0 text-decoration-none text-black" to={"#"}>{boat.name}</NavLink>
@@ -114,9 +119,9 @@ const Boat = () => {
                                 </button>
                             </div>
                         </div>
-                        <p className="d-flex  text-start my-4  float-lg-end">
-                            <strong className="text-black">Причал</strong>{": "+boat.pier}
-                        </p>
+                        <NavLink className={["d-flex  text-start my-4  float-lg-end text-decoration-none",style.name_berth].join(" ")} to={useContext(UrlClassMoreInfoContext).berths+"/"+boat.pier.id}>
+                            <strong className="text-black">Причал</strong>{": "+boat.pier.name}
+                        </NavLink>
                     </div>
                 </div>
             </div>

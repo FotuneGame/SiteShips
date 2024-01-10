@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import Carousel from "../component/carousel/Carousel";
 import {FaFilePdf} from "react-icons/fa";
 import CarouselCard from "../component/carousel/CarouselCard";
@@ -6,6 +6,7 @@ import ListPosts from "../component/listPosts/ListPosts";
 import PostShip from "../component/listPosts/PostShip/PostShip";
 import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
 import Hr from "../component/hr/Hr";
+import {UrlClassMoreInfoContext} from "../context";
 
 const Buffet = () => {
 
@@ -59,12 +60,12 @@ const Buffet = () => {
 
             <div className="container my-5">
                 <Hr/>
-                <CarouselCard title="Катера" size={boatsPostFirst.length} urlMore={"/boats"}>
-                    <ListPosts  isAdaptive={false} urlClassMoreInfo="/boats" PostType={PostShip} posts={boatsPostFirst}/>
+                <CarouselCard title="Катера" size={boatsPostFirst.length} urlMore={useContext(UrlClassMoreInfoContext).boats}>
+                    <ListPosts  isAdaptive={false} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).boats} PostType={PostShip} posts={boatsPostFirst}/>
                 </CarouselCard>
                 <Hr/>
-                <CarouselCard title="Яхты" size={yachtsPostFirst.length} urlMore={"/yachts"}>
-                    <ListPosts  isAdaptive={false} urlClassMoreInfo="/yachts" PostType={PostShip} posts={yachtsPostFirst}/>
+                <CarouselCard title="Яхты" size={yachtsPostFirst.length} urlMore={useContext(UrlClassMoreInfoContext).yachts}>
+                    <ListPosts  isAdaptive={false} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).yachts} PostType={PostShip} posts={yachtsPostFirst}/>
                 </CarouselCard>
                 <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
             </div>

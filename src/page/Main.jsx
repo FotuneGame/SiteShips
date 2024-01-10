@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FaShip, FaMap, FaLaugh, FaLocationArrow, FaArrowCircleRight} from "react-icons/fa";
 import MainImg from "../component/MainImage/MainImg";
@@ -8,6 +8,7 @@ import PersonalityOrder from "../component/PersonalityOrder/PersonalityOrder";
 import ListPosts from "../component/listPosts/ListPosts";
 import PostShip from "../component/listPosts/PostShip/PostShip";
 import Hr from "../component/hr/Hr";
+import {UrlClassMoreInfoContext} from "../context";
 
 
 const Main = () => {
@@ -32,7 +33,6 @@ const Main = () => {
         yachts:[{id:"1",name:"имя",typeShip:"Яхта",imgPath:"./img/page/yachts.jpg"},{id:"2",name:"имя",typeShip:"Яхта",imgPath:"./img/page/yachts.jpg"}],
         routers:[ {id:"1",name:"имя",typeShip:"Катер",imgPath:"./img/page/routers.jpg"}, {id:"2",name:"имя",typeShip:"Яхта",imgPath:"./img/page/routers.jpg"}],
         eventsSee:[{id:"1",name:"имя",imgPath:"./img/page/events.jpg"},{id:"2",name:"имя",imgPath:"./img/page/events.jpg"}],
-        urlClassMoreInfo:{boats:"/boats",yachts:"/yachts",routers:"/routers",eventsSee:"/events"}
     });
     const [sizeCarouselCardPopularList,setSizeCarouselCardPopularList] = useState(popularList?.boats?.length + popularList?.yachts?.length + popularList?.routers?.length + popularList?.eventsSee?.length)
 
@@ -86,9 +86,9 @@ const Main = () => {
                         <h1 className="text-center mx-auto">Катера</h1>
                         <p className="text-center mx-auto w-50">Большой выбор катеров для прогулки по Петербургу в неповторимой водной атмосфере.</p>
                     </div>
-                    <ListPosts isAdaptive={true} urlClassMoreInfo="/boats" PostType={PostShip} posts={boatsPostFirst}/>
+                    <ListPosts isAdaptive={true} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).boats} PostType={PostShip} posts={boatsPostFirst}/>
                     <div className="d-flex justify-content-center">
-                        <NavLink className="btn btn-success border-3 text-start m-2 p-2" to={"/boats"}>
+                        <NavLink className="btn btn-success border-3 text-start m-2 p-2" to={useContext(UrlClassMoreInfoContext).boats}>
                             Смотреть ещё
                             <FaArrowCircleRight className="float-end ms-4" size="1.5rem" color="white"/>
                         </NavLink>
@@ -102,9 +102,9 @@ const Main = () => {
                         <h1 className="text-center mx-auto">Яхты</h1>
                         <p className="text-center mx-auto w-50">Ждём гостей на борту наших яхт, чтобы добавить лету незабываемые впечатления.</p>
                     </div>
-                    <ListPosts isAdaptive={true} urlClassMoreInfo="/yachts" PostType={PostShip} posts={yachtsPostFirst}/>
+                    <ListPosts isAdaptive={true} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).yachts} PostType={PostShip} posts={yachtsPostFirst}/>
                     <div className="d-flex justify-content-center">
-                        <NavLink className="btn btn-success border-3 text-start m-2 p-2" to={"/yachts"}>
+                        <NavLink className="btn btn-success border-3 text-start m-2 p-2" to={useContext(UrlClassMoreInfoContext).yachts}>
                             Смотреть ещё
                             <FaArrowCircleRight className="float-end ms-4" size="1.5rem" color="white"/>
                         </NavLink>
