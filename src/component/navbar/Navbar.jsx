@@ -25,9 +25,9 @@ const Navbar = () => {
                         <NavLink className="mx-auto mx-lg-2 my-2 text-decoration-none text-black" to={useContext(UrlClassMoreInfoContext).about}> О нас</NavLink>
                     </Nav>
                     <div className="mx-auto my-2 d-flex justify-content-between">
-                        <a className="mx-auto mx-lg-1 text-decoration-none text-black" href="tel:+7-953-349-61-09"><FaPhoneAlt/>+7 (953) 349-61-09</a>
-                        <a className="mx-auto mx-lg-1" href="#"><FaWhatsapp color="black"/></a>
-                        <a className="mx-auto mx-lg-1" href="#"><FaTelegram color="black"/></a>
+                        <a className="mx-auto mx-lg-1 text-decoration-none text-black" href="tel:+7-953-349-61-09"><FaPhoneAlt color="black" size="0.9rem"/>+7 (953) 349-61-09</a>
+                        <a className="mx-auto mx-lg-1" href="#"><FaWhatsapp color="black" size="1rem"/></a>
+                        <a className="mx-auto mx-lg-1" href="#"><FaTelegram color="black" size="1rem"/></a>
                     </div>
                 </NavbarB.Collapse>
             </Container>

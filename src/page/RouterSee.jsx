@@ -93,7 +93,9 @@ const RouterSee = () => {
                         </div>
                     </div>
                 </div>
-                <PersonalityOrder title="ОФОРМИТЬ ЗАЯВКУ" callback={sendOrder} withoutContacts={true}/>
+                <div className="container my-5">
+                    <PersonalityOrder title="ОФОРМИТЬ ЗАЯВКУ" callback={sendOrder} withoutContacts={true}/>
+                </div>
             </div>
 
         </div>

@@ -53,7 +53,7 @@ const PostRoute = (props) => {
             </div>
 
             <Modal visible={modalVisible} setVisible={setModalVisible}>
-                <div className="container bg-white shadow p-2">
+                <div className="container bg-white shadow p-3 rounded-3">
                     <div className="d-flex justify-content-between pt-2">
                         <h1 className="mx-4 my-0">Оформление</h1>
                         <button className="float-end btn bg-transparent px-md-4 mx-0" onClick={()=>setModalVisible(false)}>

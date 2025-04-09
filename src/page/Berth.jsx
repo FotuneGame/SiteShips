@@ -94,7 +94,9 @@ const Berth = () => {
                     </div>
                 </div>
 
-                <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
+                <div className="container my-5">
+                    <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
+                </div>
             </div>
 
         </div>

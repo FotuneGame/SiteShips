@@ -112,13 +112,14 @@ const Main = () => {
                 </div>
 
                 <Hr/>
-
-                <CarouselCard title="Популярное" size={sizeCarouselCardPopularList}>
-                    <PopularList popularList={popularList}/>
-                </CarouselCard>
-
-                <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
-
+                <div className="container my-3">
+                    <CarouselCard title="Популярное" size={sizeCarouselCardPopularList}>
+                        <PopularList popularList={popularList}/>
+                    </CarouselCard>
+                </div>
+                <div className="container my-5">
+                    <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
+                </div>
             </div>
         </div>
     );

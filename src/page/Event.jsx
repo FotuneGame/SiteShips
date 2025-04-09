@@ -89,7 +89,10 @@ const Event = () => {
                         </div>
                     </div>
                 </div>
-                <PersonalityOrder title="ОФОРМИТЬ ЗАЯВКУ" callback={sendOrder} withoutContacts={true}/>
+
+                <div className="container mt-5">
+                    <PersonalityOrder title="ОФОРМИТЬ ЗАЯВКУ" callback={sendOrder} withoutContacts={true}/>
+                </div>
             </div>
 
         </div>

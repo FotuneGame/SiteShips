@@ -60,9 +60,9 @@ const PostShip = (props) => {
             </div>
 
             <Modal visible={modalVisible} setVisible={setModalVisible}>
-                <div className="container bg-white shadow p-2">
-                    <div className="d-flex justify-content-between pt-2">
-                        <h1 className="mx-4 my-0">Оформление</h1>
+                <div className="container bg-white shadow p-3 rounded-3">
+                    <div className="d-flex justify-content-between py-2">
+                        <h1 className="me-4 my-0">Оформление</h1>
                         <button className="float-end btn bg-transparent px-md-4 mx-0" onClick={()=>setModalVisible(false)}>
                             <FaTimes  size="2rem" color="black"/>
                         </button>
@@ -72,7 +72,7 @@ const PostShip = (props) => {
                             <div className="col ps-lg-0 pt-sm-0">
                                 <img className="img-fluid rounded-3 z-n1 mt-3" src={props?.imgPath} alt={props?.name}/>
                             </div>
-                            <div className="col pe-lg-0">
+                            <div className="col pe-lg-0 d-flex align-items-center">
                                 <PersonalityOrder title={props?.name} withoutContacts={true} callback={sendOrder}/>
                             </div>
                         </div>

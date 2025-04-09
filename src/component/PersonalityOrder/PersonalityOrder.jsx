@@ -21,12 +21,12 @@ const PersonalityOrder = ({title,withoutContacts,callback}) => {
     }
 
     return (
-        <div className="container shadow  align-content-center  p-0 p-md-3 my-3">
-            <div className="row mx-1 mb-2"><h1 className="text-center text-md-start">{title}</h1></div>
+        <div className="container  align-content-center  p-2 p-md-3 my-3">
+            <div className="row mb-2"><h2 className="text-center text-md-start">{title}</h2></div>
             <div className="row">
                 <form method="POST" className="d-grid ">
-                    <div className="row">
-                            <div className="col-12 col-lg-6 mt-2">
+                    <div className="row mt-2">
+                            <div className="col-12 col-lg-6">
                                 <input className="form-control mt-1" value={message.name} type="text" maxLength="128" placeholder="Имя" onChange={(e)=>setMessage({...message,name:e.target.value})}/>
                                 <input className="form-control mt-1" value={message.phone} type="phone" placeholder="Телефон" onChange={(e)=>setMessage({...message,phone:e.target.value})}/>
                                 <div className="d-flex justify-content-between">
@@ -37,18 +37,18 @@ const PersonalityOrder = ({title,withoutContacts,callback}) => {
                                     null
                                     :
                                     <div className="mx-auto my-2 d-grid d-md-flex">
-                                        <div className="p-1 border-opacity-50 border border-black rounded mt-2 me-md-2">
-                                            <a className=" mx-1 text-decoration-none text-black" href="tel:+7-953-349-61-09"><FaPhoneAlt/>+7 (953) 349-61-09</a>
-                                            <a className=" mx-1" href="#"><FaWhatsapp color="black"/></a>
-                                            <a className=" mx-1" href="#"><FaTelegram color="black"/></a>
+                                        <div className="d-flex align-items-center p-1 border-opacity-50 border border-black rounded mt-2 me-md-2">
+                                            <a className="d-flex align-items-center mx-1 text-decoration-none text-black" href="tel:+7-953-349-61-09"><FaPhoneAlt color='black' size="0.9rem"/>+7 (953) 349-61-09</a>
+                                            <a className="d-flex align-items-center mx-1" href="#"><FaWhatsapp color="black" size="1rem"/></a>
+                                            <a className="d-flex align-items-center mx-1" href="#"><FaTelegram color="black" size="1rem"/></a>
                                         </div>
                                         <div className="p-1 border-opacity-50 border border-black rounded mt-2">
-                                            <a className=" mx-1 text-decoration-none text-black" href="mailto:titovgrisha04@gmail.com"><FaEnvelope/> titovgrisha04@gmail.com</a>
+                                            <a className="d-flex align-items-center mx-1 text-decoration-none text-black" href="mailto:titovgrisha04@gmail.com"><FaEnvelope className='me-1'/> titovgrisha04@gmail.com</a>
                                         </div>
                                     </div>
                                 }
                             </div>
-                            <div className="col-12 col-lg-6 mt-2 align-content-around">
+                            <div className="col-12 col-lg-6 mt-1 align-content-around">
                                 <textarea cols="60" rows="5" className="form-control" value={message.text}  maxLength="1024" placeholder="Сообщение" onChange={(e)=>setMessage({...message,text:e.target.value})}/>
                                 <button className="btn btn-success my-2 float-end col-8 text-start" onClick={(e)=>sendMessage(e)}>
                                     Отправить

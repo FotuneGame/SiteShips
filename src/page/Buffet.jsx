@@ -39,8 +39,8 @@ const Buffet = () => {
                     </div>
                     <div className="col-12 py-3 col-lg-6 py-lg-0">
                         <h1>МОБИЛЬНЫЙ ФУРШЕТ</h1>
-                        <p>В долгой водной прогулке незаменим мобильный фуршет, заказанный и приготовленный специально для Вас. Кейтеринг предоставляет разнообразное меню: от антипасти до сета круассанов, от канапе из морских продуктов до ассорти из твёрдого сыра с виноградом, орехами и мёдом. Все блюда готовятся непосредственно перед доставкой на борт и доставляются за 10-15 минут до начала рейса в специальных рефрижераторных автомобилях, что гарантирует их свежесть и высокие вкусовые качества.</p>
-                        <div className="d-grid d-lg-flex py-3 py-lg-0 justify-content-around">
+                        <p className='py-3'>В долгой водной прогулке незаменим мобильный фуршет, заказанный и приготовленный специально для Вас. Кейтеринг предоставляет разнообразное меню: от антипасти до сета круассанов, от канапе из морских продуктов до ассорти из твёрдого сыра с виноградом, орехами и мёдом. Все блюда готовятся непосредственно перед доставкой на борт и доставляются за 10-15 минут до начала рейса в специальных рефрижераторных автомобилях, что гарантирует их свежесть и высокие вкусовые качества.</p>
+                        <div className="d-grid d-lg-flex py-5 py-lg-0 justify-content-around">
                             <div className="mx-1 row py-2">
                                 <FaFilePdf size="2rem" color="black" />
                                 <a className="text-black text-center" href="#" >Мобильный фуршет</a>
@@ -67,7 +67,9 @@ const Buffet = () => {
                 <CarouselCard title="Яхты" size={yachtsPostFirst.length} urlMore={useContext(UrlClassMoreInfoContext).yachts}>
                     <ListPosts  isAdaptive={false} urlClassMoreInfo={useContext(UrlClassMoreInfoContext).yachts} PostType={PostShip} posts={yachtsPostFirst}/>
                 </CarouselCard>
-                <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
+                <div className="container my-5">
+                    <PersonalityOrder title="ПОДГОТОВИТЬ ДЛЯ ВАС СПЕЦ ПРЕДЛОЖЕНИЕ?" callback={sendProposal}/>
+                </div>
             </div>
         </div>
     );
